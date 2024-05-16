@@ -1,0 +1,114 @@
+@use './../../variables';
+
+.navigation {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: variables.$main;
+    color: variables.$textPrimary;
+    padding: 24px 81px;
+
+    @media screen and (max-width: 768px) {
+        padding: 26px 30px;
+    }
+
+    @media screen and (max-width: 360px) {
+        height: 48px;
+        padding: 12px 20px;
+    }
+
+    .navigation__logo {
+        width: 104px;
+        height: 35px;
+
+        @media screen and (max-width: 768px) {
+            width: 71px;
+            height: 24px;
+        }
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    .navigation__menu {
+        list-style-type: none;
+        display: flex;
+
+        .menu__item {
+            font-family: 'LatoBold';
+            font-size: 18px;
+            line-height: 22px;
+            margin-right: 27px;
+            cursor: pointer;
+
+            button {
+                width: 24px;
+                height: 20px;
+                cursor: pointer;
+                background: url('./../../images/basket.svg');
+
+                &:hover {
+                    background: url('./../../images/basketGradient.svg');
+                }
+            }
+
+            a {
+                color: variables.$textPrimary;
+                text-decoration: none;
+
+                &:hover {
+                    background: linear-gradient(98.25deg, #EBFF00 18.56%, #FF70D9 76.02%);
+                    background-clip: text;
+                    color: transparent;
+                    opacity: 60%;
+                }
+            }
+        }
+    }
+
+    .menuDesktop {
+        @media screen and (max-width: 360px) {
+            display: none;
+        }
+    }
+
+    .navigation__menuTrigger {
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width: 360px) {
+            display: block;
+
+            >img {
+                width: 30px;
+            }
+        }
+    }
+
+    .menuMobile {
+        display: none;
+
+        @media screen and (max-width: 360px) {
+            display: block;
+            border-top: solid 1px variables.$textPrimary;
+        }
+
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 100%;
+        background: variables.$main;
+        text-align: center;
+        padding: 20px;
+
+        .menu__item {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

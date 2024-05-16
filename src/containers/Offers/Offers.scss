@@ -1,0 +1,198 @@
+@use './../../variables';
+
+@mixin tabletTitleFont {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+@mixin tabletDescriptionFont {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+main {
+    background: variables.$primary;
+    padding: 58px 81px 60px 81px;
+    color: variables.$textPrimary;
+    font-family: 'LatoExtraBold';
+
+    @media screen and (max-width: 768px) {
+        padding: 55px 30px 53px 30px;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        @media screen and (max-width: 360px) {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.offers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 62px;
+
+    @media screen and (max-width: 768px) {
+        gap: 30px;
+        margin-bottom: 55px;
+    }
+
+    @media screen and (max-width: 360px) {
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 50px;
+    }
+
+    .offers__item .offer__title {
+        width: 285px;
+        font-size: 46px;
+        line-height: 46px;
+
+        @media screen and (max-width: 768px) {
+            width: 240px;
+            @include tabletTitleFont;
+        }
+    }
+
+    .offers__item .offer__description {
+        font-size: 24px;
+        line-height: 29px;
+
+        @media screen and (max-width: 768px) {
+            @include tabletDescriptionFont;
+        }
+    }
+
+    .offers__item_size_large {
+        grid-column: span 2;
+
+        @media screen and (max-width: 768px) {
+            grid-column: auto;
+        }
+
+        .offer__title {
+            width: 635px;
+            font-size: 74px;
+            line-height: 74px;
+
+            @media screen and (max-width: 768px) {
+                width: 190px;
+                @include tabletTitleFont;
+            }
+        }
+
+        .offer__description {
+            font-size: 26px;
+            line-height: 31px;
+
+            @media screen and (max-width: 768px) {
+                @include tabletDescriptionFont;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .button {
+            width: 161px;
+            height: 33px;
+
+            .button__link {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.info {
+    font-size: 20px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media screen and (max-width: 360px) {
+        font-size: 14px;
+    }
+
+    .info__title {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 17px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+            line-height: 29px;
+            margin-bottom: 13px;
+        }
+
+        @media screen and (max-width: 360px) {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .info__description {
+        font-family: 'LatoBold';
+        line-height: 24px;
+        opacity: 60%;
+        margin-bottom: 17px;
+
+        @media screen and (max-width: 768px) {
+            line-height: 19px;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: 360px) {
+            line-height: 17px;
+        }
+    }
+
+    .info__readMoreState {
+        display: none;
+    }
+
+    .info__description_collapsible {
+        display: none;
+    }
+
+    .info__readMoreState:checked~.info__description>.info__description_collapsible {
+        display: inline;
+    }
+
+    .info__readMoreTrigger {
+        &:hover {
+            opacity: 60%;
+        }
+    }
+
+    .info__readMoreState~.info__readMoreTrigger:before,
+    .info__readMoreState:checked~.info__readMoreTrigger:before {
+        cursor: pointer;
+        color: variables.$accent_primary;
+    }
+
+    .info__readMoreState~.info__readMoreTrigger:before {
+        content: 'Read more';
+    }
+
+    .info__readMoreState:checked~.info__readMoreTrigger:before {
+        content: 'Read less';
+    }
+}

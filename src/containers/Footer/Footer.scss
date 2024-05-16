@@ -1,0 +1,14 @@
+@use './../../variables';
+
+.footer {
+    height: 127px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: variables.$main;
+    color: variables.$accent_primary;
+    font-size: 18px;
+    line-height: 28px;
+    ;
+}

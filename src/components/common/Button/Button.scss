@@ -1,0 +1,27 @@
+@use './../../../variables';
+
+.button {
+    width: 191px;
+    height: 54px;
+    border-radius: 100px;
+    cursor: pointer;
+
+    @media screen and (max-width: 360px) {
+        width: 161px;
+        height: 33px;
+    }
+
+    .button__link {
+        font-family: 'LatoBold';
+        font-size: 22px;
+        text-decoration: none;
+
+        @media screen and (max-width: 360px) {
+            font-size: 16px;
+        }
+    }
+
+    &:hover {
+        opacity: 60%;
+    }
+}

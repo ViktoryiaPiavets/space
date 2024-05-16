@@ -1,0 +1,18 @@
+@use './../../variables';
+
+.offer {
+    height: 350px;
+    padding: 35px 36px;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 26px 25px;
+    }
+
+    .offer__title,
+    .offer__description {
+        margin-bottom: 22px;
+    }
+}

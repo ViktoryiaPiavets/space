@@ -1,0 +1,90 @@
+@use './../../variables';
+
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 80px);
+    background-image: url('../../images/earth.svg'), linear-gradient(180deg, rgba(0, 0, 0, 0) -0.52%, rgba(15, 20, 32, 0.79) 99.48%), url('../../images/header_bg.svg');
+    background-position: right 20px center, center, center;
+    background-size: 30%, 100%, cover;
+    background-repeat: no-repeat;
+    color: variables.$textPrimary;
+    padding: 91px 0 0 81px;
+
+    @media screen and (max-width: 768px) {
+        height: calc(100vh - 48px);
+        background-size: 40%, 100%, cover;
+        background-position: right -90px center, center, center;
+        justify-content: center;
+        padding: 0 30px;
+    }
+
+    @media screen and (max-width: 360px) {
+        background-size: 80%, 100%, cover;
+        background-position: top -102px center, center, center;
+        text-align: center;
+        padding-bottom: 44px;
+        justify-content: flex-end;
+    }
+
+    .welcomeContainer__title,
+    .welcomeContainer__description {
+        width: 584px;
+
+        @media screen and (max-width: 768px) {
+            width: 410px;
+        }
+
+        @media screen and (max-width: 360px) {
+            width: 292px;
+        }
+    }
+
+    .welcomeContainer__title {
+        font-size: 72px;
+        line-height: 72px;
+        margin-bottom: 22px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 48px;
+            line-height: 48px;
+        }
+
+        @media screen and (max-width: 360px) {
+            font-size: 36px;
+            line-height: 36px;
+            margin-bottom: 17px;
+        }
+    }
+
+    .welcomeContainer__description {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 22px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        @media screen and (max-width: 360px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 17px;
+        }
+    }
+
+    .welcomeContainer__title_highlighted_pink {
+        color: variables.$accent_secondary;
+    }
+
+    .welcomeContainer__title_highlighted_yellow {
+        color: variables.$accent_primary;
+    }
+
+    .button {
+        @media screen and (max-width: 360px) {
+            margin: 0 auto;
+        }
+    }
+}
